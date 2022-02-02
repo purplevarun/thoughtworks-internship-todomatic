@@ -20,30 +20,34 @@ const TodoApp = () => {
 	});
 	return (
 		<div className="Main">
-			<div className="todoapp" style={{ width: todoAppWidth }}>
-				<div className="new-note-area">
-					<textarea
-						name="newnite"
-						id=""
-						cols="40"
-						rows="10"
-						placeholder="Write new note here.."
-						onChange={(e) => SetNewNote(e.target.value)}
-					></textarea>
-				</div>
-				<div style={{ width: "100%" }}></div>
-				<div className="submit-area">
-					<button
-						className="btn btn-lg btn-primary"
-						onClick={() => {
-							saveTheNewNote();
-						}}
-					>
-						Save this note
-					</button>
+			<div className="todoappContainer" style={{ width: todoAppWidth }}>
+				<div className="pagetitle"></div>
+				<div className="todoapp">
+					<div className="new-note-area">
+						<textarea
+							name="newnite"
+							id=""
+							cols="40"
+							rows="10"
+							placeholder="Write new note here.."
+							onChange={(e) => SetNewNote(e.target.value)}
+						></textarea>
+					</div>
+					<div style={{ width: "100%" }}></div>
+					<div className="submit-area">
+						<button
+							className="btn btn-lg btn-primary"
+							onClick={() => {
+								saveTheNewNote();
+							}}
+						>
+							Save this note
+						</button>
+					</div>
 				</div>
 			</div>
 			<div className="saved-notes" style={{ width: savedNotesWidth }}>
+				<h1>Your Saved Notes :</h1>
 				{allNotes.map((thisNote, i) => {
 					return (
 						<div key={i} className="one-note">
