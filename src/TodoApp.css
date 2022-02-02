@@ -1,0 +1,29 @@
+.todoapp {
+	display: flex;
+	flex-direction: column;
+	/* background-color: red; */
+	width: 70%;
+	align-items: center;
+}
+.submit-area {
+	margin-top: 20px;
+}
+.submitbtn {
+	width: 150px;
+	height: 40px;
+	background-color: mediumslateblue;
+	border: 2px groove gold;
+	border-radius: 15px;
+	font-size: 20px;
+	color: whitesmoke;
+}
+.Main {
+	display: flex;
+	flex-direction: row;
+	height: 80vh;
+}
+.saved-notes {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
