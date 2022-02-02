@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./TodoApp.css";
 import "./bootstrap.min.css";
 const TodoApp = () => {
+	const NOTEAREA = useRef(null);
 	const [newNote, SetNewNote] = useState("");
 	const [todoAppWidth, SetTodoAppWidth] = useState("100%");
 	const [savedNotesWidth, SetSavedNotesWidth] = useState("0");
@@ -13,6 +14,7 @@ const TodoApp = () => {
 	};
 	const saveTheNewNote = () => {
 		if (newNote.length > 0) SetAllNotes([...allNotes, newNote]);
+		NOTEAREA.current.value = "";
 	};
 	useEffect(() => {
 		if (allNotes.length > 0) {
@@ -29,6 +31,7 @@ const TodoApp = () => {
 				<div className="todoapp">
 					<div className="new-note-area">
 						<textarea
+							ref={NOTEAREA}
 							name="newnote"
 							id="note-area"
 							cols="40"

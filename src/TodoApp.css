@@ -14,7 +14,9 @@
 }
 .pagetitle {
 	height: 200px;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .submit-area {
 	margin-top: 20px;
