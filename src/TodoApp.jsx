@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TodoApp.css";
 import "./bootstrap.min.css";
 const TodoApp = () => {
+	const [todoAppWidth, SetTodoAppWidth] = useState("100%");
+	const [savedNotesWidth, SetSavedNotesWidth] = useState("0");
+	const changeDimensions = (newTodoAppWidth, newSavedNotesWidth) => {
+		SetTodoAppWidth(newTodoAppWidth);
+		SetSavedNotesWidth(newSavedNotesWidth);
+	};
 	return (
 		<div className="Main">
-			<div className="todoapp">
+			<div className="todoapp" style={{ width: todoAppWidth }}>
 				<div className="new-note-area">
 					<textarea
 						name="newnite"
@@ -16,12 +22,18 @@ const TodoApp = () => {
 				</div>
 				<div style={{ width: "100%" }}></div>
 				<div className="submit-area">
-					<button className="btn btn-lg btn-primary">
+					<button
+						className="btn btn-lg btn-primary"
+						onClick={() => changeDimensions("70%", "30%")}
+					>
 						Save this note
 					</button>
 				</div>
 			</div>
-			<div className="saved-notes">hey</div>
+			<div
+				className="saved-notes"
+				style={{ width: savedNotesWidth }}
+			></div>
 		</div>
 	);
 };
