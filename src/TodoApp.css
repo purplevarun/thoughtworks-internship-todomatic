@@ -22,3 +22,7 @@
 	width: 0;
 	/* then 30 */
 }
+.one-note {
+	border-bottom: 2px solid black;
+	padding: 5px;
+}

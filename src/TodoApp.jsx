@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TodoApp.css";
 import "./bootstrap.min.css";
 const TodoApp = () => {
 	const [newNote, SetNewNote] = useState("");
 	const [todoAppWidth, SetTodoAppWidth] = useState("100%");
 	const [savedNotesWidth, SetSavedNotesWidth] = useState("0");
+	const [allNotes, SetAllNotes] = useState([]);
 	const changeDimensions = (newTodoAppWidth, newSavedNotesWidth) => {
-		SetTodoAppWidth(newTodoAppWidth);
-		SetSavedNotesWidth(newSavedNotesWidth);
+		if (allNotes.length > 0) {
+			SetTodoAppWidth(newTodoAppWidth);
+			SetSavedNotesWidth(newSavedNotesWidth);
+		}
 	};
+	const saveTheNewNote = () => {
+		if (newNote.length > 0) SetAllNotes([...allNotes, newNote]);
+	};
+	useEffect(() => {
+		changeDimensions("70%", "20%");
+	});
 	return (
 		<div className="Main">
 			<div className="todoapp" style={{ width: todoAppWidth }}>
@@ -27,7 +36,7 @@ const TodoApp = () => {
 					<button
 						className="btn btn-lg btn-primary"
 						onClick={() => {
-							changeDimensions("70%", "30%");
+							saveTheNewNote();
 						}}
 					>
 						Save this note
@@ -35,7 +44,13 @@ const TodoApp = () => {
 				</div>
 			</div>
 			<div className="saved-notes" style={{ width: savedNotesWidth }}>
-				{newNote}
+				{allNotes.map((thisNote, i) => {
+					return (
+						<div key={i} className="one-note">
+							{thisNote}
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
