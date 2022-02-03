@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thoughtworks-internship-todomatic/static/css/main.efa807b9.css",
+    "main.js": "/thoughtworks-internship-todomatic/static/js/main.5f731f01.js",
+    "static/js/787.f37dca5b.chunk.js": "/thoughtworks-internship-todomatic/static/js/787.f37dca5b.chunk.js",
+    "index.html": "/thoughtworks-internship-todomatic/index.html",
+    "main.efa807b9.css.map": "/thoughtworks-internship-todomatic/static/css/main.efa807b9.css.map",
+    "main.5f731f01.js.map": "/thoughtworks-internship-todomatic/static/js/main.5f731f01.js.map",
+    "787.f37dca5b.chunk.js.map": "/thoughtworks-internship-todomatic/static/js/787.f37dca5b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.efa807b9.css",
+    "static/js/main.5f731f01.js"
+  ]
+}
